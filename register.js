@@ -33,9 +33,7 @@ form.addEventListener('submit',(event)=>{
     <span class="text-white">Registered successfully.</span>
   </div>`
    form.reset();
-   setTimeout(()=>{
-       window.location = 'login.html'
-   },100)
+  window.location = 'login.html'
   })
   .catch((error) => {
     const errorCode = error.code;

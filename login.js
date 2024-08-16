@@ -17,8 +17,8 @@ toastError.style.display = 'none';
 
 // Form Button Function
 form.addEventListener('submit',(event)=>{
-    event.preventDefault();
-    signInWithEmailAndPassword(auth, userEmail.value, userPassword.value)
+  event.preventDefault();
+  signInWithEmailAndPassword(auth, userEmail.value, userPassword.value)
     .then((userCredential) => {
       const user = userCredential.user;
       console.log("🚀 ~ .then ~ user:", user);
@@ -26,9 +26,11 @@ form.addEventListener('submit',(event)=>{
     toastSuccess.innerHTML = `<div class="alert alert-success">
     <span class="text-white">Login successfully.</span>
   </div>`
-   form.reset();
-   setTimeout(()=>{
-       window.location = 'dashboard.html';
+  localStorage.setItem('user-email',JSON.stringify(userEmail.value));
+  
+  form.reset();
+  setTimeout(()=>{
+    window.location = 'index.html';
    },100)
     })
     .catch((error) => {
@@ -38,16 +40,18 @@ form.addEventListener('submit',(event)=>{
       toastError.innerHTML = `<div class="bg-red-500 p-[17px] rounded-box px-[43px]">
       <span class="text-white">${errorMessage}</span>
     </div>`
-    });
+  });
 })
 
 
 // On auth state  change function 
+
 onAuthStateChanged(auth, (user) => {
-  if (user) {
-    const uid = user.uid;
-   window.location = 'dashboradd.html';
-  } else {
-    console.log('User is not login');
-  }
-});
+    if (user) {
+        const uid = user.uid;
+      //  window.location = 'index.html';
+      } else {
+          console.log('User is not login');
+        }
+      });
+    
