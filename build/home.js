@@ -1,14 +1,11 @@
 // Import functions
 import { collection,doc, getDocs ,updateDoc} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 import { auth,db } from './config.js';
-import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 
 
 
 // Declare Variables
 const cardsSection = document.querySelector('.cards-section');
-const nav = document.getElementById('nav');
-
 let arr = []
 
 
@@ -76,16 +73,3 @@ function renderData(){
     }
     
     
-    
-// On auth state  change function 
-
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-      const uid = user.uid;
-    nav.style.display = 'none'
-    } else {
-        console.log('User is not login');
-        nav.style.display = 'block';
-      }
-    });
-  

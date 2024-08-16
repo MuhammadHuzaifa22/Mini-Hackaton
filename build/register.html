@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+  </head>
+  <body>
+
+
+<!-- Toast started -->
+<div class="toast toast-top toast-center" id="toast-success">
+
+  </div>
+  <!-- Toast ended -->
+
+
+<!-- Toast started -->
+<div class="toast toast-top toast-center" id="toast-error">
+    
+  </div>
+  <!-- Toast ended -->
+
+
+<!-- Form started -->
+    <form
+      class="w-[300px] xs:w-[350px] sm:w-[400px] md:w-[450px] lg:w-[500px] flex flex-col mx-auto mt-[100px] gap-[20px] shadow-[2px_2px_2px_2px_gray] py-[50px]"
+    >
+      <input
+        type="text"
+        placeholder="First Name"
+        class="input input-bordered w-full max-w-xs mx-auto"
+        id="firstname"
+        required
+        minlength="3"
+        maxlength="20"
+        title="First name should  be atleast 3 character"
+      />
+      <input
+        type="text"
+        placeholder="Last Name"
+        class="input input-bordered w-full max-w-xs mx-auto"
+        id="lastname"
+        required
+        minlength="1"
+        maxlength="20"
+        title="Last name should  be atleast 1 character"
+      />
+      <input
+        type="email"
+        placeholder="Email"
+        class="input input-bordered w-full max-w-xs mx-auto"
+        id="email"
+        required
+        title="Email must includes @"
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        class="input input-bordered w-full max-w-xs mx-auto"
+        id="password"
+        required
+        pattern="(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+        title="Password must be at least 8 characters long and include both uppercase and lowercase letters."
+      />
+      <input
+      type="password"
+      placeholder="Re enter password"
+      class="input input-bordered w-full max-w-xs mx-auto"
+      id="repeat-user-password"
+      required
+      pattern="(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+      title="Password must be at least 8 characters long and include both uppercase and lowercase letters."
+    />
+      <button class="btn btn-active btn-primary mx-auto" type="submit">
+        Signup
+      </button>
+      <p class="text-center">
+        Already a member?<a href="login.html" class="text-primary">Login</a>
+      </p>
+    </form>
+    <!-- Form started -->
+
+
+    
+
+    <!-- Daisy Ui Cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Tailwind Css Cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- JAvaScript Link -->
+    <script  type="module" src="register.js"></script>
+  </body>
+</html>
